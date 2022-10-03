@@ -1,7 +1,6 @@
 # This system calculates dry matter increase as a function of
 # intercepted radiation, light use efficiency, and water availability
 @system CROPP begin
-
     PL(IDPL, IDAY) => (IDAY >= IDPL) ~ flag # flag for
 
     "Days since planting"
@@ -120,47 +119,46 @@
 #-----------------------------------------------------------------------------------------#
 #-----------------------------------------------------------------------------------------#
 
-    "Day of planting (CONFIG)"
-    IDPL ~ hold
-    "Total (above ground) crop dry weight at emergence (CONFIG)"
-    TAGBI ~ hold
-    "Asymptotic maximum of harvest index (CONFIG)"
-    HIM ~ hold
-    "Initial slope of the harvest index curve (0.0015 (very late) to 0.0045 (very early)) (CONFIG)"
-    HISLP ~ hold
-    "Start of tuber filling indicated by temperature sum (CONFIG("
-    STTUB ~ hold
+    "Day of planting"
+    IDPL ~ hold #CONFIG
+    "Total (above ground) crop dry weight at emergence"
+    TAGBI ~ hold #CONFIG
+    "Asymptotic maximum of harvest index"
+    HIM ~ hold #CONFIG
+    "Initial slope of the harvest index curve (0.0015 (very late) to 0.0045 (very early))"
+    HISLP ~ hold #CONFIG
+    "Start of tuber filling indicated by temperature sum"
+    STTUB ~ hold #CONFIG
     "Dry matter content of storage organs (tubers) (-)"
-    DMSO ~ hold
+    DMSO ~ hold #CONFIG
     "Base temperature of sums for potato (C)"
-    TBASE ~ hold
+    TBASE ~ hold #CONFIG
     " Atmospheric CO2 concentration"
-    CO2 ~ hold
+    CO2 ~ hold #CONFIG
     "Daylength effect on/off"
-    IDAYL ~ hold # Daylength effect on/off
+    IDAYL ~ hold #CONFIG
     "Day length for maximum long day effect"
-    DAYMAX ~ hold
+    DAYMAX ~ hold #CONFIG
     "Day length with no long day effect"
-    DAYMIN ~ hold
+    DAYMIN ~ hold #CONFIG
     "Temperature sum for emergence of 50% of plants (sum above TBASE = 2)"
-    TSUMEM ~ hold
+    TSUMEM ~ hold #CONFIG
     "Plant density"
-    NPL  ~ hold
-    "Day number (WEATHR)"
-    IDAY ~ hold # WEATHR
+    NPL  ~ hold #CONFIG
+    "Day number"
+    IDAY ~ hold #WEATHR
     "Actual daily total radiation"
-    AVRAD ~ hold # PENMAN
+    AVRAD ~ hold #PENMAN
     "Fractional light interception of the canopy"
-    FINT ~ hold # LINTER
+    FINT ~ hold #LINTER
     "Daily maximum temperature"
-    TMAX ~ hold # WEATHR
+    TMAX ~ hold #WEATHR
     "Daily minimum temperature"
-    TMIN ~ hold # WEATHR
+    TMIN ~ hold #WEATHR
     "Daily temperature range (WEATHR)"
-    TMPA ~ hold # WEATHR
+    TMPA ~ hold #WEATHR
     "Photoperiodically active daylength (ASTRO)"
-    DAYLP ~ hold # ASTRO
+    DAYLP ~ hold #ASTRO
     "Reduction of transpiration due to drought (WATBALS)"
-    RDRY ~ hold # WATBALS
-
+    RDRY ~ hold #WATBALS
 end

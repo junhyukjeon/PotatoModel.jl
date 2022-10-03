@@ -85,31 +85,31 @@ of a closed crop canopy (ET0).
 #-----------------------------------------------------------------------------------------#
     
     "Altitude"
-    ALTI ~ hold # ASTRO
+    ALTI ~ hold #CONFIG
     "Atmospheric CO2"
-    CO2 ~ hold # CONFIG
-    "Albedo for water surface (CONFIG)"
-    REFCFW ~ hold
-    "Albedo for soil surface (CONFIG)"
-    REFCFS ~ hold
-    "Albedo for canopy (CONFIG)"
-    REFCFC ~ hold
-    "Latent heat of evaporation of water (CONFIG)"
-    LHVAP ~ hold
-    "Stefan Boltzmann constant (CONFIG)"
-    STBC ~ hold
-    "Psychometric instrument constant (CONFIG)"
-    PSYCON ~ hold
-    "Daylength (ASTRO)"
-    DAYL ~ hold
-    SINLD ~ hold
-    COSLD ~ hold
-    "Daily minimum temperature (WEATHR)"
-    TMIN ~ hold
-    "Daily maximum temperature (WEATHR)"
-    TMAX ~ hold
+    CO2 ~ hold #CONFIG
+    "Albedo for water surface"
+    REFCFW ~ hold #CONFIG
+    "Albedo for soil surface"
+    REFCFS ~ hold #CONFIG
+    "Albedo for canopy"
+    REFCFC ~ hold #CONFIG
+    "Latent heat of evaporation of weather"
+    LHVAP ~ hold #CONFIG
+    "Stefan Boltzmann constant"
+    STBC ~ hold #CONFIG
+    "Psychometric instrument constant"
+    PSYCON ~ hold #CONFIG
+    "Daylength"
+    DAYL ~ hold #ASTRO
+    SINLD ~ hold #ASTRO
+    COSLD ~ hold #ASTRO
+    "Daily minimum temperature"
+    TMIN ~ hold #WEATHR
+    "Daily maximum temperature"
+    TMAX ~ hold #WEATHER
     "Daily midrange temperature (WEATHR)"
-    TMPA ~ hold
+    TMPA ~ hold #WEATHR
     "Vapor pressure (WEATHR)"
     VAP ~ hold
     "Wind  (WEATHR)"
