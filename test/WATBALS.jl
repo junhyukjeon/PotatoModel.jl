@@ -2,17 +2,19 @@ using Cropbox
 using PotatoModel
 using Test
 
-using PotatoModel: WATBALS
+using PotatoModel: ASTRO, CROPP, LINTER, PENMAN, WATBALS, WEATHR, CONFIG
 
-@system WATBALSController(WATBALS, Controller) begin
-    ES0 => 1 ~ preserve(parameter)
-    ETC => 1 ~ preserve(parameter)
-    RAIN => 1 ~ preserve(parameter)
-    FINT => 1 ~ preserve(parameter)
-
-    time(context.clock.time) ~ track(u"d")
-end
+@system WATBALSController(ASTRO, CROPP, LINTER, PENMAN, WATBALS, WEATHR, CONFIG, Controller)
 
 @testset "WATBALS" begin
-    r = simulate(WBALController; stop = 5u"d")
+    config = @config (
+        :Calendar => :init => ZonedDateTime(1971, 4, 15, tz"UTC"),
+        :Clock => :step => 1u"d",
+        :WEATHR => :W => CSV.File(joinpath(@__DIR__, "WAGE71.csv")) |> DataFrame,
+        :CONFIG => (; IDPL = 105)
+)
+
+    r = simulate(WATBALSController; config, stop = 134u"d")
+
+    visualize(r, :IDAY, :TRAIN, kind=:line)
 end
