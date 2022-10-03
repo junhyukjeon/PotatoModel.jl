@@ -84,10 +84,10 @@ of a closed crop canopy (ET0).
 #-----------------------------------------------------------------------------------------#
 #-----------------------------------------------------------------------------------------#
     
-    "Altitude (CONFIG)"
-    ALTI ~ hold
-    "Atmospheric CO2 (CONFIG)"
-    CO2 ~ hold
+    "Altitude"
+    ALTI ~ hold # ASTRO
+    "Atmospheric CO2"
+    CO2 ~ hold # CONFIG
     "Albedo for water surface (CONFIG)"
     REFCFW ~ hold
     "Albedo for soil surface (CONFIG)"
@@ -118,5 +118,5 @@ of a closed crop canopy (ET0).
     DTR ~ hold
     "Day number (WEATHR)"
     IDAY ~ hold
-    
+
 end

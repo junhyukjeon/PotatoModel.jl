@@ -2,6 +2,7 @@
 This system loads weather values from a csv format weather file.
 """
 @system WEATHR(Controller) begin
+
     calendar(context) ~ ::Calendar
     "Weather dataframe"
     W ~ provide(index=:DATE, init=calendar.date, parameter)
