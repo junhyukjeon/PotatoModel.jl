@@ -39,9 +39,9 @@ precipitation, surface runoff, irrigation, and drainage to the sub-soil.
     SWDEP(nounit(ETC)) => 1/(0.76 + 1.5*ETC) - 0.2 ~ track(min=0.10, max=0.95)
     SMCR(SWDEP, SMFC, SMW) => (1 - SWDEP) * (SMFC - SMW) + SMW ~ track
     RDRY(SMACT, SMW, SMCR) => (SMACT - SMW) / (SMCR - SMW) ~ track(min=0, max=1)
+
     "Actual transpiration"
     TRA(RDRY, TRMAX) => RDRY * TRMAX ~ track(u"cm/d")
-
 
     "Maximum soil evaporation rate as function of light interception"
     EVMAX(ES0, FINT) => ES0 * (1 - FINT) ~ track(u"cm/d")
@@ -49,9 +49,9 @@ precipitation, surface runoff, irrigation, and drainage to the sub-soil.
     DSLR(DSLR, PERC) => ((PERC >= 1u"cm/d") ? 1 : (DSLR + 1)) ~ track(init=3)
     EVMAXINT(DSLR) => sqrt(DSLR) - sqrt(DSLR - 1) ~ track(min=0, max=1)
     EVMAXT(EVMAX, EVMAXINT, CFEV) => EVMAX * EVMAXINT * CFEV ~ track(u"cm/d")
+
     "Actual soil evaporation rate"
     EVA(EVMAX, EVMAXT, PERC) => ((PERC >= 1u"cm/d") ? EVMAX : min(EVMAX, EVMAXT + PERC)) ~ track(u"cm/d")
-
 
     "Effective percolation"
     PERC1(PERC, EVA, TRA) => PERC - EVA - TRA ~ track(u"cm/d")

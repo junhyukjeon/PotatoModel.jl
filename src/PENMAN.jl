@@ -31,13 +31,13 @@ of a closed crop canopy (ET0).
     GAMMA(PSYCON, PBAR) => PSYCON * PBAR ~ track(u"mbar/K")
 
     "Saturated vapor pressure (mbar) (Goudriaan equation)"
-    SVAP(nounit(TMPA)) => 6.11 * exp(17.4 * TMPA / (TMPA + 239)) ~ track(u"mbar")
+    SVAP(nounit(TMPA)) => 6.10588 * exp(17.32491 * TMPA / (TMPA + 238.102)) ~ track(u"mbar")
 
     "Measured vapor limit (mbar)"
     VAPLIM(VAP, SVAP) => min(VAP, SVAP) ~ track(u"mbar")
 
     "Slope of SVAP-temperature curve (mbar/K)"
-    DELTA(SVAP, nounit(TMPA)) => 239 * 17.4 * SVAP / (TMPA + 239)^2 * u"K^-1" ~ track(u"mbar/K")
+    DELTA(SVAP, nounit(TMPA)) => 238.102 * 17.32491 * SVAP / (TMPA + 238.102)^2 * u"K^-1" ~ track(u"mbar/K")
 
     AOB(SINLD, COSLD) => SINLD/COSLD ~ track(min=-1, max=1)
     DSINB(nounit(DAYL), SINLD, COSLD, AOB) => 3600*(DAYL*SINLD + 24*COSLD*sqrt(1-AOB*AOB)/pi) ~ track
@@ -52,7 +52,7 @@ of a closed crop canopy (ET0).
     AVRAD(ANGOT, nounit(DTR)) => min(0.8*ANGOT, DTR) ~ track(u"J/m^2/d")
 
     "Atmospheric transmission"
-    ATMTR(AVRAD, ANGOT) => AVRAD/ANGOT ~ track(u"J/m^2/d")
+    ATMTR(AVRAD, ANGOT) => AVRAD/ANGOT ~ track(init=0.5, u"J/m^2/d")
 
     RELSSD(nounit(ATMTR)) => (ATMTR - 0.2)/0.56 ~ track(min=0, max=1)
 
@@ -76,7 +76,7 @@ of a closed crop canopy (ET0).
     # Penman formula (1948) #
     E0(DELTA, RNW, LHVAP, GAMMA, EA) => 0.1u"cm/mm"*(DELTA*(RNW/LHVAP) + GAMMA*EA)/(DELTA + GAMMA) ~ track(u"cm/d")
     ES0(DELTA, RNS, LHVAP, GAMMA, EA) => 0.1u"cm/mm"*(DELTA*(RNS/LHVAP) + GAMMA*EA)/(DELTA + GAMMA) ~ track(u"cm/d")
-    ET0(DELTA, RNC, LHVAP, GAMMA, EA) => 0.1u"cm/mm"*(DELTA*(RNC/LHVAP) + GAMMA*EA)/(DELTA + GAMMA) ~ track(u"cm/d")
+    ET0(DELTA, RNC, LHVAP, GAMMA, EAC) => 0.1u"cm/mm"*(DELTA*(RNC/LHVAP) + GAMMA*EAC)/(DELTA + GAMMA) ~ track(u"cm/d")
 
     "Corrected potential evapo-transpiration"
     ETC(ET0, CCET, CO2) => ET0 * CCET(CO2) ~ track(u"cm/d")

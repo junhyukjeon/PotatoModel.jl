@@ -3,7 +3,7 @@ This system calculates astronomical daylength and photoperiodically active day l
 Requires day of year and latitude.
 """
 @system ASTRO begin
-
+    
     "Declination of sun as function of julian day number"
     DEC(IDAY) => -asin(sin(23.45*pi/180)*cos(2*pi*(IDAY+10)/365)) ~ track
 
@@ -26,5 +26,5 @@ Requires day of year and latitude.
     LAT ~ hold # CONFIG
     "Julian day number"
     IDAY ~ hold # WEATHR
-    
+
 end

@@ -2,7 +2,7 @@
 This system calculates seasonal course of fractional light interception.
 """
 @system LINTER begin
-
+    
     TSULE1GT0(TSULE1) => (TSULE1 > 0u"K") ~ flag # flag for checking temperature sum
 
     "Light interception during the phase of leaf area expansion"

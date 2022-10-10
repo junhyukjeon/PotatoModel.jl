@@ -1,4 +1,6 @@
 using Cropbox
+using CSV
+using DataFrames
 using PotatoModel
 using Test
 
@@ -6,7 +8,7 @@ using PotatoModel: ASTRO, WEATHR, CONFIG
 
 @system ASTROController(ASTRO, WEATHR, CONFIG, Controller)
 
-@testset "ASTRO" begin
+# @testset "ASTRO" begin
     config = @config (
         :Calendar => :init => ZonedDateTime(1971, 4, 15, tz"UTC"),
         :Clock => :step => 1u"d",
@@ -18,4 +20,4 @@ using PotatoModel: ASTRO, WEATHR, CONFIG
 
     visualize(r, :IDAY, [:SINLD, :COSLD], kind=:line)
     visualize(r, :IDAY, [:DAYL, :DAYLP], kind=:line)
-end
+# end

@@ -1,4 +1,6 @@
 using Cropbox
+using CSV
+using DataFrames
 using PotatoModel
 using Test
 

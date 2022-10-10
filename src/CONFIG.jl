@@ -2,7 +2,7 @@
 This system contains all parameters for PotatoModel.
 """
 @system CONFIG begin
-    ## INPUT ##
+    
     IRRI => 1 ~ preserve(parameter) # 0 = off, 1 = on
     IDPL => 50 ~ preserve(parameter)
     IDEM => 0 ~ preserve(parameter)
@@ -53,4 +53,5 @@ This system contains all parameters for PotatoModel.
     RUNFR => 0 ~ preserve(parameter)
     CFET => 1.15 ~ preserve(parameter)
     CFEV => 2.0 ~ preserve(parameter)
+
 end

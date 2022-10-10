@@ -1,7 +1,8 @@
 # This system calculates dry matter increase as a function of
 # intercepted radiation, light use efficiency, and water availability
 @system CROPP begin
-    PL(IDPL, IDAY) => (IDAY >= IDPL) ~ flag # flag for
+
+    PL(IDPL, IDAY) => (IDAY >= IDPL) ~ flag
 
     "Days since planting"
     DAYS => 1 ~ accumulate::int(when=PL, u"d")
@@ -84,11 +85,11 @@
 
     RCO(COTB, CO2) => COTB(CO2) ~ track
 
-    DTEMP(nounit(TMIN), nounit(TMAX)) => TMAX - 0.25*(TMAX - TMIN) ~ track(min=0)
+    DTEMP(nounit(TMIN), nounit(TMAX)) => TMAX - 0.25*(TMAX - TMIN) ~ track
     RTMP(TMPTB, DTEMP) => TMPTB(DTEMP) ~ track
 
     PARINT(FINT, PAR) => FINT * PAR ~ track(u"MJ/m^2/d")
-    GRT(RTMP, RCO, LUE, RDRY, PARINT) => RTMP*RCO*LUE*PARINT*10*RDRY * u"kg/ha/MJ*m^2" ~ track(u"kg/ha/d")
+    GRT(RTMP, RCO, LUE, RDRY, PARINT) => RTMP*RCO*LUE*PARINT*10*RDRY*u"kg/ha/MJ*m^2" ~ track(u"kg/ha/d")
 
     "Harvest Index"
     HI(HIM, HISLP, nounit(TSUTE), STTUB) => begin
@@ -97,7 +98,7 @@
 
     "Start of Tuber Filling"
     TUB(nounit(TSUTE), STTUB) => (TSUTE >= STTUB) ~ flag
-    IDTUB(IDAY) => IDAY ~ remember(when=TUB)
+    # IDTUB(IDAY) => IDAY ~ preserve(when=TUB)
 
     "Total photosynthetically active radiation (MJ/m2)"
     TPAR(PAR) => PAR ~ accumulate(u"MJ/m^2")
@@ -113,8 +114,8 @@
 
     EM(PL, TSULP, TSUMEM) => (PL && (TSULP >= TSUMEM)) ~ flag
 
-    "Day of emergence"
-    IDEM(IDAY, EM) => IDAY ~ remember(when=EM)
+    # "Day of emergence"
+    # IDEM(IDAY, EM) => IDAY ~ preserve(when=EM)
 
 #-----------------------------------------------------------------------------------------#
 #-----------------------------------------------------------------------------------------#
@@ -161,4 +162,5 @@
     DAYLP ~ hold #ASTRO
     "Reduction of transpiration due to drought (WATBALS)"
     RDRY ~ hold #WATBALS
+    
 end
