@@ -4,7 +4,7 @@ Requires day of year and latitude.
 """
 @system ASTRO begin
     
-    "Declination of sun as function of julian day number"
+    "Declination of sun as function of day number"
     DEC(IDAY) => -asin(sin(23.45*pi/180)*cos(2*pi*(IDAY+10)/365)) ~ track
 
     # Intermediates #

@@ -130,13 +130,13 @@
     HISLP ~ hold #CONFIG
     "Start of tuber filling indicated by temperature sum"
     STTUB ~ hold #CONFIG
-    "Dry matter content of storage organs (tubers) (-)"
+    "Dry matter content of storage organs (tubers)"
     DMSO ~ hold #CONFIG
     "Base temperature of sums for potato (C)"
     TBASE ~ hold #CONFIG
     " Atmospheric CO2 concentration"
     CO2 ~ hold #CONFIG
-    "Daylength effect on/off"
+    "Daylength effect switch"
     IDAYL ~ hold #CONFIG
     "Day length for maximum long day effect"
     DAYMAX ~ hold #CONFIG
@@ -156,11 +156,11 @@
     TMAX ~ hold #WEATHR
     "Daily minimum temperature"
     TMIN ~ hold #WEATHR
-    "Daily temperature range (WEATHR)"
+    "Daily temperature range"
     TMPA ~ hold #WEATHR
-    "Photoperiodically active daylength (ASTRO)"
+    "Photoperiodically active daylength"
     DAYLP ~ hold #ASTRO
-    "Reduction of transpiration due to drought (WATBALS)"
+    "Reduction of transpiration due to drought"
     RDRY ~ hold #WATBALS
     
 end

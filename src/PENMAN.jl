@@ -94,7 +94,7 @@ of a closed crop canopy (ET0).
     REFCFS ~ hold #CONFIG
     "Albedo for canopy"
     REFCFC ~ hold #CONFIG
-    "Latent heat of evaporation of weather"
+    "Latent heat of evaporation of water"
     LHVAP ~ hold #CONFIG
     "Stefan Boltzmann constant"
     STBC ~ hold #CONFIG
@@ -108,15 +108,15 @@ of a closed crop canopy (ET0).
     TMIN ~ hold #WEATHR
     "Daily maximum temperature"
     TMAX ~ hold #WEATHER
-    "Daily midrange temperature (WEATHR)"
+    "Daily midrange temperature"
     TMPA ~ hold #WEATHR
-    "Vapor pressure (WEATHR)"
+    "Vapor pressure"
     VAP ~ hold
-    "Wind  (WEATHR)"
+    "Wind"
     WIND ~ hold
-    "Daily total radiation (WEATHR)"
+    "Daily total radiation"
     DTR ~ hold
-    "Day number (WEATHR)"
+    "Day number"
     IDAY ~ hold
 
 end

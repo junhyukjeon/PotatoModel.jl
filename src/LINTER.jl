@@ -27,19 +27,19 @@ This system calculates seasonal course of fractional light interception.
 #-----------------------------------------------------------------------------------------#
 #-----------------------------------------------------------------------------------------#
 
-    "Initial light interception capacity per plant (CONFIG)"
+    "Initial light interception capacity per plant"
     FINT0 ~ hold
-    "Initial relative growth rate of light interception capacity (CONFIG)"
+    "Initial relative growth rate of light interception capacity"
     R0 ~ hold
-    "Duration of phase of decreasing light interception (CONFIG)"
+    "Duration of phase of decreasing light interception"
     DURE ~ hold
-    "Temperature sum required until 50% reduction of light interception (CONFIG)"
+    "Temperature sum required until 50% reduction of light interception"
     TS50 ~ hold
     "Plant density (per m^2)"
     NPL ~ hold
-    "Temperature sum after emergence of foliage (without long day effect) (CROPP)"
+    "Temperature sum after emergence of foliage (without long day effect)"
     TSULE1 ~ hold
-    "Temperature sum after emergence of foliage (with long day effect) (CROPP)"
+    "Temperature sum after emergence of foliage (with long day effect)"
     TSULE2 ~ hold
 
 end

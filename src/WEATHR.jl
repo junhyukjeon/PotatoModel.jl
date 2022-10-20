@@ -1,7 +1,7 @@
 """
 This system loads weather values from a csv format weather file.
 """
-@system WEATHR(Controller) begin
+@system WEATHR begin
 
     calendar(context) ~ ::Calendar
     "Weather dataframe"

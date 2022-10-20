@@ -110,31 +110,31 @@ precipitation, surface runoff, irrigation, and drainage to the sub-soil.
 #----------------------------------------------------------------------#
 #----------------------------------------------------------------------#
     
-    "Soil moisture content at wilting point (pF= 4.2) (CONFIG)"
+    "Soil moisture content at wilting point (pF= 4.2)"
     SMW ~ hold
-    "Soil moisture content at field capacity (pF= 2.3) (CONFIG))"
+    "Soil moisture content at field capacity (pF= 2.3)"
     SMFC ~ hold
-    "Soil moisture content at saturation (from CONFIG)"
+    "Soil moisture content at saturation"
     SM0 ~ hold
-    "Initial soil moisture content at planting or emergence (CONFIG)"
+    "Initial soil moisture content at planting or emergence"
     SMI ~ hold
-    "Maximum rooting depth for potato crop (CONFIG)"
+    "Maximum rooting depth for potato crop"
     RDMCR ~ hold
-    "Maximum rooting depth determined by soil structure and layers (CONFIG)"
+    "Maximum rooting depth determined by soil structure and layers"
     RDMSO ~ hold
-    "Average fraction of precipitation lost by runoff (CONFIG)"
+    "Average fraction of precipitation lost by runoff"
     RUNFR ~ hold
-    "Crop-specific correction factor of potential transpiration (CONFIG)"
+    "Crop-specific correction factor of potential transpiration"
     CFET ~ hold
-    "Correction factor of time course of soil evaporation (between 1 and 4) (CONFIG)"
+    "Correction factor of time course of soil evaporation (between 1 and 4)"
     CFEV ~ hold
     "Potential evaporation from soil surface"
     ES0 ~ hold # From PENMAN
-    "Corrected potential evapo-transpiration (PENMAN)"
+    "Corrected potential evapo-transpiration"
     ETC ~ hold
-    "Precipitation (WEATHR)"
+    "Precipitation"
     RAIN ~ hold # From WEATHR
-    "Fractional light interception of canopy (LINTER)"
+    "Fractional light interception of canopy"
     FINT ~ hold
     
 end
